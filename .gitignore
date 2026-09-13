@@ -1,0 +1,13 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / temporários
+*.log
+.impeccable/review/
+.impeccable/build/
+
+# Editores
+.vscode/
+.idea/

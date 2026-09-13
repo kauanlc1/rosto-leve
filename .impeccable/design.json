@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12T00:00:00Z",
+  "title": "Design System: Rosto Leve",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Espresso", "canonical": "#131110", "tonalRamp": ["#0b0a09", "#131110", "#1c1917", "#2a2724", "#3a3632", "#544d46", "#8c8379", "#c0b8ae"] },
+      "ink-2": { "role": "neutral", "displayName": "Espresso Secondary", "canonical": "#1c1917", "tonalRamp": ["#0f0d0c", "#1c1917", "#262220", "#332e2a", "#463f39", "#6b635a", "#9a9289", "#c0b8ae"] },
+      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#2a2724", "tonalRamp": ["#151311", "#2a2724", "#3a3632", "#4b453f", "#6b635a", "#8c8379", "#b0a89e", "#d6cfc5"] },
+      "bone": { "role": "neutral", "displayName": "Ivory", "canonical": "#f4f0ea", "tonalRamp": ["#8c8379", "#a89f95", "#c0b8ae", "#d6cfc5", "#e6e0d8", "#efe9e0", "#f4f0ea", "#fbf9f5"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#fbf9f5", "tonalRamp": ["#a89f95", "#c0b8ae", "#d6cfc5", "#e6e0d8", "#efe9e0", "#f4f0ea", "#fbf9f5", "#ffffff"] },
+      "paper-2": { "role": "neutral", "displayName": "Paper Deep", "canonical": "#efe9e0", "tonalRamp": ["#9a9289", "#b0a89e", "#c8bfb4", "#d9d0c5", "#e4dcd1", "#efe9e0", "#f4f0ea", "#fbf9f5"] },
+      "accent": { "role": "primary", "displayName": "Oxblood", "canonical": "#7c2b2b", "tonalRamp": ["#2f0f0f", "#4a1919", "#611f1f", "#7c2b2b", "#9a3b34", "#b85a52", "#d68e88", "#f0cfca"] },
+      "accent-warm": { "role": "primary", "displayName": "Oxblood Warm", "canonical": "#9a3b34", "tonalRamp": ["#3a1512", "#561e1a", "#722a24", "#9a3b34", "#b85a52", "#cd7b73", "#e0a59e", "#f2d2cc"] },
+      "accent-on": { "role": "primary", "displayName": "Oxblood Tint", "canonical": "#f7efe9", "tonalRamp": ["#a89f95", "#c0b8ae", "#d6cfc5", "#e6ded6", "#efe7e0", "#f3ede7", "#f7efe9", "#fdfaf7"] },
+      "on-dark-soft": { "role": "neutral", "displayName": "Ink-on-Dark Soft", "canonical": "#c0b8ae", "tonalRamp": ["#544d46", "#6b635a", "#8c8379", "#a89f95", "#c0b8ae", "#d6cfc5", "#e6e0d8", "#f4f0ea"] },
+      "on-light-soft": { "role": "neutral", "displayName": "Ink-on-Light Soft", "canonical": "#544d46", "tonalRamp": ["#26221f", "#3a3632", "#544d46", "#6b635a", "#8c8379", "#a89f95", "#c0b8ae", "#e6e0d8"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Bodoni Moda cover headline — hero only; second line often italic." },
+      "headline": { "displayName": "Headline", "purpose": "Bodoni Moda section openers (.d-1)." },
+      "title": { "displayName": "Title", "purpose": "Bodoni Moda sub-section titles and statements (.d-2/.d-3)." },
+      "body": { "displayName": "Body", "purpose": "Archivo reading text, measure ~66ch, line-height 1.62." },
+      "lede": { "displayName": "Lede", "purpose": "Archivo supporting paragraph under a headline, soft ink, max 60ch." },
+      "label": { "displayName": "Folio / Label", "purpose": "Archivo uppercase tracked micro-label — photo folios and captions, never an eyebrow." }
+    },
+    "shadows": [
+      { "name": "shadow-soft", "value": "0 24px 60px -28px rgba(19,17,16,.45)", "purpose": "The only shadow. Under the comparator knob to make the draggable circle feel liftable. Not a card shadow." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.22,1,.36,1)", "purpose": "Default easing for all state and reveal transitions." },
+      { "name": "reveal", "value": "opacity/transform .9s ease, from translateY(22px)", "purpose": "Scroll reveal from a visible resting state; degrades to visible without JS; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "spread", "value": "820px" },
+      { "name": "twocol", "value": "720px" },
+      { "name": "list", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The live element — primary action. Oxblood fill, tint label, hard corners, sliding arrow.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Descobrir por que meu rosto incha <svg class=\"ds-arw\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:.7em;padding:1.05em 1.8em;font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-weight:600;font-size:.94rem;letter-spacing:.02em;background:#7c2b2b;color:#f7efe9;border:1px solid #7c2b2b;border-radius:0;transition:background .4s cubic-bezier(.22,1,.36,1),transform .3s cubic-bezier(.22,1,.36,1)}.ds-btn-primary .ds-arw{width:1.15em;height:1.15em;transition:transform .4s cubic-bezier(.22,1,.36,1)}.ds-btn-primary:hover{background:#9a3b34;border-color:#9a3b34}.ds-btn-primary:hover .ds-arw{transform:translateX(5px)}.ds-btn-primary:active{transform:translateY(1px)}.ds-btn-primary:focus-visible{outline:2px solid #9a3b34;outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action — hairline outline that inverts to a solid fill on hover. Shown on a dark ground.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Ver o método</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;gap:.7em;padding:1.05em 1.8em;font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-weight:600;font-size:.94rem;letter-spacing:.02em;background:transparent;color:#f4f0ea;border:1px solid rgba(244,240,234,.28);border-radius:0;transition:background .4s cubic-bezier(.22,1,.36,1),color .4s cubic-bezier(.22,1,.36,1)}.ds-btn-ghost:hover{background:#f4f0ea;color:#131110}.ds-btn-ghost:focus-visible{outline:2px solid #9a3b34;outline-offset:3px}"
+    },
+    {
+      "name": "Quiz Option",
+      "kind": "chip",
+      "refersTo": "quiz-option",
+      "description": "Single-select answer row on a dark ground. Hairline border, hollow marker; hover nudges right; selected turns oxblood.",
+      "html": "<button class=\"ds-quiz-opt\"><span>Ao acordar, de manhã</span><span class=\"ds-mk\"></span></button>",
+      "css": ".ds-quiz-opt{display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;width:100%;padding:1.15em 1.4em;background:transparent;border:1px solid rgba(244,240,234,.28);color:#f4f0ea;font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-size:1.02rem;font-weight:500;border-radius:0;transition:background .3s cubic-bezier(.22,1,.36,1),border-color .3s cubic-bezier(.22,1,.36,1),padding .3s cubic-bezier(.22,1,.36,1)}.ds-quiz-opt .ds-mk{width:22px;height:22px;border:1px solid rgba(244,240,234,.28);border-radius:50%;flex:none}.ds-quiz-opt:hover{background:#2a2724;border-color:#f4f0ea;padding-left:1.7em}.ds-quiz-opt:hover .ds-mk{border-color:#f4f0ea}.ds-quiz-opt[aria-pressed=\"true\"]{background:#7c2b2b;border-color:#7c2b2b;color:#f7efe9}.ds-quiz-opt[aria-pressed=\"true\"] .ds-mk{border-color:#f7efe9;background:#f7efe9}"
+    },
+    {
+      "name": "Folio / Caption Label",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Uppercase tracked micro-label used as a photo folio/caption. The oxblood index only renders on light grounds (AA).",
+      "html": "<p class=\"ds-credit\"><span class=\"ds-idx\">Fig. 01</span> &nbsp;<span class=\"ds-cap\">o ritual de 7 minutos</span></p>",
+      "css": ".ds-credit{font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#6b635a}.ds-credit .ds-idx{color:#7c2b2b}.ds-credit .ds-cap{text-transform:none;letter-spacing:.02em}"
+    },
+    {
+      "name": "Numbered Phase Row",
+      "kind": "custom",
+      "refersTo": "phase",
+      "description": "Hairline-ruled row with a large Bodoni numeral and an oxblood duration tag. Numbering is real sequence.",
+      "html": "<div class=\"ds-phase\"><span class=\"ds-phase-n\">1</span><div class=\"ds-phase-b\"><h3>Abrir</h3><p>Liberar as saídas de drenagem no pescoço e na clavícula.</p></div><span class=\"ds-phase-t\">1 min</span></div>",
+      "css": ".ds-phase{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(18px,4vw,48px);align-items:baseline;padding:clamp(22px,3.2vw,38px) 0;border-top:1px solid rgba(19,17,16,.14)}.ds-phase-n{font-family:Bodoni Moda,Didot,serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:.8;font-weight:500;color:#131110}.ds-phase-b h3{font-family:Bodoni Moda,Didot,serif;font-weight:500;font-size:clamp(1.3rem,2.2vw,1.7rem);margin:0 0 .35em}.ds-phase-b p{margin:0;max-width:52ch;color:#544d46}.ds-phase-t{font-family:Archivo,sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#7c2b2b;white-space:nowrap;align-self:center}"
+    },
+    {
+      "name": "Before/After Comparator",
+      "kind": "custom",
+      "refersTo": "compare",
+      "description": "Signature interaction. Drag handle over grayscaled media; the oxblood knob is the only circle and the only shadow in the system.",
+      "html": "<div class=\"ds-compare\" style=\"--pos:50%\"><div class=\"ds-cmp-handle\"></div><div class=\"ds-cmp-knob\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 7 5 12l4 5M15 7l4 5-4 5M6 12h12\"/></svg></div></div>",
+      "css": ".ds-compare{position:relative;width:100%;aspect-ratio:3/4;max-width:520px;margin-inline:auto;overflow:hidden;background:#2a2724;user-select:none}.ds-cmp-handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#9a3b34;transform:translateX(-1px)}.ds-cmp-knob{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#7c2b2b;color:#f7efe9;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 60px -28px rgba(19,17,16,.45)}.ds-cmp-knob svg{width:22px;height:22px}"
+    },
+    {
+      "name": "FAQ Accordion Item",
+      "kind": "custom",
+      "refersTo": "faq",
+      "description": "Native details/summary, hairline-ruled, Bodoni question, oxblood plus/minus glyph whose vertical stroke collapses on open.",
+      "html": "<details class=\"ds-faq\" open><summary class=\"ds-faq-q\"><h3>Funciona no meu tipo de rosto?</h3><span class=\"ds-pm\"></span></summary><div class=\"ds-faq-a\"><p>Sim — o protocolo trata retenção temporária, comum a quase todos os rostos.</p></div></details>",
+      "css": ".ds-faq{border-bottom:1px solid rgba(19,17,16,.14)}.ds-faq>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(18px,2.4vw,26px) 0}.ds-faq>summary::-webkit-details-marker{display:none}.ds-faq-q h3{font-family:Bodoni Moda,Didot,serif;font-size:clamp(1.1rem,1.7vw,1.35rem);font-weight:500;margin:0}.ds-pm{position:relative;width:20px;height:20px;flex:none}.ds-pm::before,.ds-pm::after{content:\"\";position:absolute;background:#7c2b2b;transition:transform .35s cubic-bezier(.22,1,.36,1)}.ds-pm::before{top:9px;left:0;width:20px;height:1.5px}.ds-pm::after{left:9px;top:0;width:1.5px;height:20px}.ds-faq[open] .ds-pm::after{transform:scaleY(0)}.ds-faq-a{color:#544d46;max-width:64ch;padding-bottom:clamp(18px,2.4vw,26px)}.ds-faq-a p{margin:0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Aesthetics House Cover Story",
+    "overview": "Rosto Leve reads like an editorial house's cover feature, not a niche depuffing landing page. It refuses the category default — soft light background, emoji, identical cards, a shouting guarantee seal — and replaces it with cinematic proof and editorial typography. The whole surface is warm monochrome: espresso-near-black grounds carry full-bleed grayscaled media, ivory grounds carry the reading, and photogravure grays sit between. A single restrained oxblood is the only chromatic voice, and it is spent only on the 'live element.' The world is recognizable with the content stripped out: the alternation of dark-cinema and ivory-editorial grounds, 1px hairlines as the only divider, high-contrast Didot display (Bodoni Moda) set against clean grotesque body (Archivo), and uppercase tracked micro-labels used as photo folios and captions. Tone follows the brand voice: mature, elegant, confident, unhurried. A deliberate night to day to night tonal progression runs down the scroll. Density is generous; motion is quiet — content rests visible and reveals gently on scroll, degrading to fully visible without JS and honoring reduced-motion.",
+    "keyCharacteristics": [
+      "Warm monochrome: espresso grounds + ivory grounds + photogravure grays.",
+      "One accent (oxblood) reserved for the live element; never decorative.",
+      "Bodoni Moda display against Archivo body; uppercase tracked folios.",
+      "1px hairlines as the sole divider; flat surfaces, square corners.",
+      "Full-bleed grayscaled media; editorial spreads across the gutter."
+    ],
+    "rules": [
+      { "name": "The Live Element Rule", "body": "Oxblood marks exactly one thing — the element that is alive under the reader's hand or eye (primary action, slider, active choice, live folio). If a surface has oxblood in two unrelated decorative places, one of them is wrong.", "section": "colors" },
+      { "name": "The Dark-Ground Fallback Rule", "body": "On espresso grounds, full oxblood (#7c2b2b) fails AA for small text, so small accents fall back to Oxblood Warm (#9a3b34) or neutral soft ink. Oxblood folios only render in oxblood on light grounds, where they pass.", "section": "colors" },
+      { "name": "The Folio, Not Eyebrow Rule", "body": "Uppercase tracked micro-labels are photo folios and captions (Fig. 01, Pergunta 01, Seu resultado) — never a kicker/eyebrow stacked above a headline as a decorative label. Caption descriptions drop to normal case for legibility.", "section": "typography" },
+      { "name": "The Serif Numeral Rule", "body": "Sequence numbers that are real sequence (phase 1–4, module 01–n, the price figure) are set in the Bodoni display at large size; they are the system's ornament instead of any invented badge.", "section": "typography" },
+      { "name": "The Flat-Ground Rule", "body": "Surfaces are flat. Separation is a 1px hairline or a tonal shift, never a drop shadow. The single Soft Lift exists to make the draggable knob feel liftable; do not extend it to cards, buttons, or sections.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do spend oxblood only on the live element (primary action, slider handle/knob, active choice, live folio), keeping it rare.",
+      "Do alternate espresso and ivory grounds to carry the night to day to night scroll progression.",
+      "Do divide with 1px hairlines and tonal shifts; keep surfaces flat and corners square (border-radius: 0).",
+      "Do set every headline and real sequence numeral in Bodoni Moda display, and all reading/UI in Archivo.",
+      "Do use uppercase tracked micro-labels as photo folios/captions, and grayscale all photographic and video media.",
+      "Do let content rest visible and reveal gently on scroll; honor prefers-reduced-motion and keep AA contrast (fall back to Oxblood Warm / soft ink for small accents on dark)."
+    ],
+    "donts": [
+      "Don't stack an uppercase micro-label as a kicker/eyebrow above a headline — folios are captions, not eyebrows.",
+      "Don't add drop shadows to cards, buttons, or sections; the single Soft Lift belongs to the comparator knob alone.",
+      "Don't introduce a second accent hue or use oxblood decoratively — one voice only.",
+      "Don't use gradients as decorative surface fills; gradients are permitted only as functional media scrims for legibility and the single scroll-cue hairline fade.",
+      "Don't round corners (except the comparator knob) or reach for generic same-size card grids."
+    ]
+  }
+}

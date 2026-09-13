@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teste — por que o seu rosto incha?</title>
+<meta name="description" content="Responda 5 perguntas rápidas e descubra por que o seu rosto muda de um dia para o outro — e qual protocolo do Rosto Leve combina com você.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&display=swap">
+<link rel="stylesheet" href="assets/css/app.css">
+<style>
+  /* Estilos específicos do quiz */
+  .quiz-shell{min-height:100svh;display:flex;flex-direction:column;background:var(--ink)}
+  .q-head{position:sticky;top:0;z-index:20;padding:18px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(19,17,16,.85);backdrop-filter:blur(10px)}
+  .q-progress{position:relative;flex:1;height:2px;background:var(--line-dark);max-width:520px}
+  .q-progress__fill{position:absolute;left:0;top:0;bottom:0;width:100%;transform:scaleX(0);transform-origin:left;background:var(--accent-warm);transition:transform .5s var(--ease)}
+  .q-counter{font-family:var(--sans);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-soft);min-width:4ch;text-align:right}
+  .q-body{flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(40px,8vw,90px) var(--gutter)}
+  .q-step{width:min(100%,720px)}
+  .q-step[hidden]{display:none}
+  .q-step h2{margin-bottom:clamp(24px,4vw,40px)}
+  .q-opts{display:grid;gap:12px}
+  .q-opt{display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;width:100%;
+    padding:1.15em 1.4em;border:1px solid var(--line-dark-2);color:var(--on-dark);
+    font-family:var(--sans);font-size:1.02rem;font-weight:500;
+    transition:background .3s var(--ease),border-color .3s var(--ease),transform .2s var(--ease),padding .3s var(--ease)}
+  .q-opt:hover{background:var(--graphite);border-color:var(--bone);padding-left:1.7em}
+  .q-opt[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-on)}
+  .q-opt .mk{width:22px;height:22px;border:1px solid var(--line-dark-2);border-radius:50%;flex:none;position:relative;transition:border-color .3s}
+  .q-opt:hover .mk{border-color:var(--bone)}
+  .q-opt[aria-pressed="true"] .mk{border-color:var(--accent-on);background:var(--accent-on)}
+  .q-nav{margin-top:clamp(26px,4vw,40px);display:flex;align-items:center;gap:18px}
+  .q-back{display:inline-flex;align-items:center;gap:.5em;color:var(--on-dark-soft);font-size:.86rem;font-weight:500}
+  .q-back:hover{color:var(--on-dark)}
+  .q-back svg{transform:rotate(180deg)}
+  .q-intro{color:var(--on-dark-soft);margin-bottom:1.4rem;max-width:52ch}
+  /* Resultado */
+  .q-result{width:min(100%,780px)}
+  .q-result .rlabel{margin-bottom:1.2rem}
+  .q-result .rdesc{margin:1.4rem 0 0;color:var(--on-dark-soft);max-width:60ch;font-size:1.08rem;line-height:1.55}
+  .q-result ul{list-style:none;padding:0;margin:1.8rem 0 0;display:grid;gap:.9rem}
+  .q-result li{display:grid;grid-template-columns:auto 1fr;gap:.8em;align-items:start;color:var(--on-dark);max-width:58ch}
+  .q-result li .ico{width:1.25em;height:1.25em;color:var(--accent-warm);margin-top:.2em}
+  .q-cta{margin-top:2.4rem;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></symbol>
+</defs></svg>
+
+<main class="quiz-shell" data-quiz>
+  <div class="q-head">
+    <a class="wordmark" href="index.html">Rosto Leve<span class="dot">.</span></a>
+    <div class="q-progress"><div class="q-progress__fill"></div></div>
+    <span class="q-counter" data-q-counter>1 / 5</span>
+  </div>
+
+  <div class="q-body">
+
+    <!-- Q1 -->
+    <div class="q-step" data-key="quando">
+      <p class="credit q-intro"><span class="idx">Pergunta 01</span></p>
+      <h2 class="display d-2">Quando o seu rosto costuma parecer mais inchado?</h2>
+      <div class="q-opts">
+        <button class="q-opt" data-opt="manha"><span>Ao acordar, de manhã</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="salgado"><span>Depois de comer algo salgado</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="alcool"><span>Na manhã depois de beber</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="tpm"><span>Perto da menstruação</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="sempre"><span>Quase todos os dias, o dia todo</span><span class="mk"></span></button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-step" data-key="muda" hidden>
+      <p class="credit q-intro"><span class="idx">Pergunta 02</span></p>
+      <h2 class="display d-2">Você sente que “muda de cara” de um dia para o outro?</h2>
+      <div class="q-opts">
+        <button class="q-opt" data-opt="muito"><span>Sim, é impressionante a diferença</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="asvezes"><span>Às vezes, em certos dias</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="pouco"><span>Quase não muda</span><span class="mk"></span></button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-step" data-key="agua" hidden>
+      <p class="credit q-intro"><span class="idx">Pergunta 03</span></p>
+      <h2 class="display d-2">Já tentou beber mais água — e mesmo assim não resolveu?</h2>
+      <div class="q-opts">
+        <button class="q-opt" data-opt="sim"><span>Sim, e me frustrei</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="talvez"><span>Bebo pouca água, admito</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="nao"><span>Nunca tentei nada específico</span><span class="mk"></span></button>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-step" data-key="momento" hidden>
+      <p class="credit q-intro"><span class="idx">Pergunta 04</span></p>
+      <h2 class="display d-2">Qual momento mais te incomoda?</h2>
+      <div class="q-opts">
+        <button class="q-opt" data-opt="fotos"><span>Aparecer em fotos e selfies</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="trabalho"><span>Trabalho, reuniões, chamadas de vídeo</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="evento"><span>Um evento específico chegando</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="espelho"><span>Só o espelho, toda manhã</span><span class="mk"></span></button>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-step" data-key="tempo" hidden>
+      <p class="credit q-intro"><span class="idx">Pergunta 05</span></p>
+      <h2 class="display d-2">Quanto tempo você tem de manhã?</h2>
+      <div class="q-opts">
+        <button class="q-opt" data-opt="pouco"><span>Menos de 5 minutos</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="medio"><span>Entre 5 e 10 minutos</span><span class="mk"></span></button>
+        <button class="q-opt" data-opt="muito"><span>Mais de 10 minutos</span><span class="mk"></span></button>
+      </div>
+    </div>
+
+    <!-- RESULTADO -->
+    <div class="q-step q-result" hidden>
+      <p class="credit rlabel"><span class="idx">Seu resultado</span></p>
+      <h2 class="display d-1">Tudo indica: o seu rosto está <span class="serif-it">retendo líquido</span>, não acumulando gordura.</h2>
+      <p class="rdesc">Pelas suas respostas, o padrão é de <strong>inchaço facial temporário</strong> — o tipo que muda de um dia para o outro e responde bem a um ritual curto e bem sequenciado. Não é a balança, e não é “culpa sua”.</p>
+      <ul>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>O protocolo <strong>Rosto Leve de 7 minutos</strong> foi desenhado exatamente para esse padrão.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>Cabe na sua manhã e entrega resultado visível <strong>no mesmo dia</strong>.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>Inclui o protocolo <strong>SOS</strong> para os dias de urgência — foto, evento, a manhã depois.</span></li>
+      </ul>
+      <div class="q-cta">
+        <a class="btn btn--primary btn--lg" href="vendas.html">Ver o método Rosto Leve <svg class="ico arw"><use href="#i-arrow"/></svg></a>
+        <button class="q-back" data-q-restart type="button">Refazer o teste</button>
+      </div>
+      <p class="note" style="margin-top:2rem;max-width:56ch">Este teste é orientativo e estético. Inchaço súbito, assimétrico, com dor ou que não melhora em dias merece avaliação médica.</p>
+    </div>
+
+    <div class="q-nav">
+      <button class="q-back" data-q-back type="button"><svg class="ico" style="width:1em;height:1em"><use href="#i-arrow"/></svg> Voltar</button>
+    </div>
+
+  </div>
+</main>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

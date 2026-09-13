@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-12T23:03:01.273Z",
+        "reason": "falso positivo: seções full-bleed (conteudo recuado via .wrap) e linhas separadas por fio de 1px tem padding generoso clamp(); verificado em screenshots desktop+mobile"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-12T23:03:01.470Z",
+        "reason": "rotulos editoriais em versalete tracked (folios/creditos curtos) e marcadores 'synthetic' dev-only removiveis; nao e corpo de texto"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "quiz.html"
+        ],
+        "createdAt": "2026-09-12T23:03:01.714Z",
+        "reason": "falso positivo: seções full-bleed (conteudo recuado via .wrap) e linhas separadas por fio de 1px tem padding generoso clamp(); verificado em screenshots desktop+mobile"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "quiz.html"
+        ],
+        "createdAt": "2026-09-12T23:03:01.962Z",
+        "reason": "rotulos editoriais em versalete tracked (folios/creditos curtos) e marcadores 'synthetic' dev-only removiveis; nao e corpo de texto"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "vendas.html"
+        ],
+        "createdAt": "2026-09-12T23:03:02.199Z",
+        "reason": "falso positivo: seções full-bleed (conteudo recuado via .wrap) e linhas separadas por fio de 1px tem padding generoso clamp(); verificado em screenshots desktop+mobile"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "vendas.html"
+        ],
+        "createdAt": "2026-09-12T23:03:02.403Z",
+        "reason": "rotulos editoriais em versalete tracked (folios/creditos curtos) e marcadores 'synthetic' dev-only removiveis; nao e corpo de texto"
+      }
+    ]
+  }
+}
