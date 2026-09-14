@@ -1,12 +1,13 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-12T00:00:00Z",
+  "generatedAt": "2026-09-14T00:00:00Z",
   "title": "Design System: Rosto Leve",
   "extensions": {
     "colorMeta": {
       "ink": { "role": "neutral", "displayName": "Espresso", "canonical": "#131110", "tonalRamp": ["#0b0a09", "#131110", "#1c1917", "#2a2724", "#3a3632", "#544d46", "#8c8379", "#c0b8ae"] },
       "ink-2": { "role": "neutral", "displayName": "Espresso Secondary", "canonical": "#1c1917", "tonalRamp": ["#0f0d0c", "#1c1917", "#262220", "#332e2a", "#463f39", "#6b635a", "#9a9289", "#c0b8ae"] },
       "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#2a2724", "tonalRamp": ["#151311", "#2a2724", "#3a3632", "#4b453f", "#6b635a", "#8c8379", "#b0a89e", "#d6cfc5"] },
+      "device-black": { "role": "neutral", "displayName": "Device Black", "canonical": "#0a0908", "tonalRamp": ["#050403", "#0a0908", "#131110", "#1c1917", "#2a2724", "#3a3632", "#544d46", "#8c8379"] },
       "bone": { "role": "neutral", "displayName": "Ivory", "canonical": "#f4f0ea", "tonalRamp": ["#8c8379", "#a89f95", "#c0b8ae", "#d6cfc5", "#e6e0d8", "#efe9e0", "#f4f0ea", "#fbf9f5"] },
       "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#fbf9f5", "tonalRamp": ["#a89f95", "#c0b8ae", "#d6cfc5", "#e6e0d8", "#efe9e0", "#f4f0ea", "#fbf9f5", "#ffffff"] },
       "paper-2": { "role": "neutral", "displayName": "Paper Deep", "canonical": "#efe9e0", "tonalRamp": ["#9a9289", "#b0a89e", "#c8bfb4", "#d9d0c5", "#e4dcd1", "#efe9e0", "#f4f0ea", "#fbf9f5"] },
@@ -20,20 +21,28 @@
       "display": { "displayName": "Display", "purpose": "Bodoni Moda cover headline — hero only; second line often italic." },
       "headline": { "displayName": "Headline", "purpose": "Bodoni Moda section openers (.d-1)." },
       "title": { "displayName": "Title", "purpose": "Bodoni Moda sub-section titles and statements (.d-2/.d-3)." },
+      "subhead": { "displayName": "Subhead", "purpose": "Bodoni component headings: plan name (1.5rem), step/preview/FAQ/module headings, testimonial quote (1.12rem), device caption (1.05rem), modal heading (top of range)." },
       "body": { "displayName": "Body", "purpose": "Archivo reading text, measure ~66ch, line-height 1.62." },
       "lede": { "displayName": "Lede", "purpose": "Archivo supporting paragraph under a headline, soft ink, max 60ch." },
-      "label": { "displayName": "Folio / Label", "purpose": "Archivo uppercase tracked micro-label — photo folios and captions, never an eyebrow." }
+      "label": { "displayName": "Folio / Label", "purpose": "Archivo uppercase tracked micro-label — folios, captions, plan flag, bonus folios; never an eyebrow." },
+      "numeral-lg": { "displayName": "Numeral (Large)", "purpose": "Bodoni phase sequence numeral (clamp 2.4–4.2rem, line-height 0.8)." },
+      "numeral-md": { "displayName": "Numeral (Medium)", "purpose": "Bodoni step sequence numeral in the how-it-works band (clamp 2–2.8rem)." },
+      "price": { "displayName": "Price", "purpose": "Bodoni big offer figure (clamp 3.2–5rem)." },
+      "plan-price": { "displayName": "Plan Price", "purpose": "Bodoni plan-card price figure (clamp 2.6–3.6rem)." }
     },
     "shadows": [
-      { "name": "shadow-soft", "value": "0 24px 60px -28px rgba(19,17,16,.45)", "purpose": "The only shadow. Under the comparator knob to make the draggable circle feel liftable. Not a card shadow." }
+      { "name": "shadow-soft", "value": "0 24px 60px -28px rgba(19,17,16,.45)", "purpose": "The only shadow. Under the comparator knob and the phone-mockup chassis so physical objects feel liftable. Not a card shadow." }
     ],
     "motion": [
       { "name": "ease", "value": "cubic-bezier(.22,1,.36,1)", "purpose": "Default easing for all state and reveal transitions." },
-      { "name": "reveal", "value": "opacity/transform .9s ease, from translateY(22px)", "purpose": "Scroll reveal from a visible resting state; degrades to visible without JS; disabled under prefers-reduced-motion." }
+      { "name": "reveal", "value": "opacity/transform .9s ease, from translateY(22px)", "purpose": "Scroll reveal from a visible resting state; degrades to visible without JS; disabled under prefers-reduced-motion." },
+      { "name": "pop", "value": "@keyframes pop translateY(14px)->0, opacity 0->1, .4s ease", "purpose": "Upgrade modal entrance; disabled under prefers-reduced-motion." }
     ],
     "breakpoints": [
       { "name": "spread", "value": "820px" },
+      { "name": "plans-preview", "value": "760px" },
       { "name": "twocol", "value": "720px" },
+      { "name": "steps", "value": "680px" },
       { "name": "list", "value": "640px" }
     ]
   },
@@ -43,16 +52,16 @@
       "kind": "button",
       "refersTo": "button-primary",
       "description": "The live element — primary action. Oxblood fill, tint label, hard corners, sliding arrow.",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\">Descobrir por que meu rosto incha <svg class=\"ds-arw\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Quero o Completo <svg class=\"ds-arw\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
       "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:.7em;padding:1.05em 1.8em;font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-weight:600;font-size:.94rem;letter-spacing:.02em;background:#7c2b2b;color:#f7efe9;border:1px solid #7c2b2b;border-radius:0;transition:background .4s cubic-bezier(.22,1,.36,1),transform .3s cubic-bezier(.22,1,.36,1)}.ds-btn-primary .ds-arw{width:1.15em;height:1.15em;transition:transform .4s cubic-bezier(.22,1,.36,1)}.ds-btn-primary:hover{background:#9a3b34;border-color:#9a3b34}.ds-btn-primary:hover .ds-arw{transform:translateX(5px)}.ds-btn-primary:active{transform:translateY(1px)}.ds-btn-primary:focus-visible{outline:2px solid #9a3b34;outline-offset:3px}"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Secondary action — hairline outline that inverts to a solid fill on hover. Shown on a dark ground.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Ver o método</a>",
-      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;gap:.7em;padding:1.05em 1.8em;font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-weight:600;font-size:.94rem;letter-spacing:.02em;background:transparent;color:#f4f0ea;border:1px solid rgba(244,240,234,.28);border-radius:0;transition:background .4s cubic-bezier(.22,1,.36,1),color .4s cubic-bezier(.22,1,.36,1)}.ds-btn-ghost:hover{background:#f4f0ea;color:#131110}.ds-btn-ghost:focus-visible{outline:2px solid #9a3b34;outline-offset:3px}"
+      "description": "Secondary / lower-commitment action (the Essencial plan) — hairline outline that inverts to a solid fill on hover. Shown on a dark ground.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Garantir o Essencial</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:.7em;padding:1.05em 1.8em;font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-weight:600;font-size:.94rem;letter-spacing:.02em;background:transparent;color:#f4f0ea;border:1px solid rgba(244,240,234,.28);border-radius:0;transition:background .4s cubic-bezier(.22,1,.36,1),color .4s cubic-bezier(.22,1,.36,1)}.ds-btn-ghost:hover{background:#f4f0ea;color:#131110}.ds-btn-ghost:focus-visible{outline:2px solid #9a3b34;outline-offset:3px}"
     },
     {
       "name": "Quiz Option",
@@ -66,23 +75,71 @@
       "name": "Folio / Caption Label",
       "kind": "custom",
       "refersTo": "label",
-      "description": "Uppercase tracked micro-label used as a photo folio/caption. The oxblood index only renders on light grounds (AA).",
+      "description": "Uppercase tracked micro-label used as a photo folio/caption or bonus folio. The oxblood index only renders on light grounds (AA).",
       "html": "<p class=\"ds-credit\"><span class=\"ds-idx\">Fig. 01</span> &nbsp;<span class=\"ds-cap\">o ritual de 7 minutos</span></p>",
       "css": ".ds-credit{font-family:Archivo,Helvetica Neue,Arial,sans-serif;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#6b635a}.ds-credit .ds-idx{color:#7c2b2b}.ds-credit .ds-cap{text-transform:none;letter-spacing:.02em}"
     },
     {
       "name": "Numbered Phase Row",
       "kind": "custom",
-      "refersTo": "phase",
+      "refersTo": "numeral-lg",
       "description": "Hairline-ruled row with a large Bodoni numeral and an oxblood duration tag. Numbering is real sequence.",
       "html": "<div class=\"ds-phase\"><span class=\"ds-phase-n\">1</span><div class=\"ds-phase-b\"><h3>Abrir</h3><p>Liberar as saídas de drenagem no pescoço e na clavícula.</p></div><span class=\"ds-phase-t\">1 min</span></div>",
       "css": ".ds-phase{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(18px,4vw,48px);align-items:baseline;padding:clamp(22px,3.2vw,38px) 0;border-top:1px solid rgba(19,17,16,.14)}.ds-phase-n{font-family:Bodoni Moda,Didot,serif;font-size:clamp(2.4rem,5vw,4.2rem);line-height:.8;font-weight:500;color:#131110}.ds-phase-b h3{font-family:Bodoni Moda,Didot,serif;font-weight:500;font-size:clamp(1.3rem,2.2vw,1.7rem);margin:0 0 .35em}.ds-phase-b p{margin:0;max-width:52ch;color:#544d46}.ds-phase-t{font-family:Archivo,sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#7c2b2b;white-space:nowrap;align-self:center}"
     },
     {
+      "name": "How-It-Works Step",
+      "kind": "custom",
+      "refersTo": "step",
+      "description": "Hairline-separated cell with a large oxblood Bodoni step numeral over a Bodoni subhead and soft-ink body. Real sequence.",
+      "html": "<div class=\"ds-step\"><span class=\"ds-step-n\">2</span><h3>Receba na hora</h3><p>O acesso cai imediatamente no seu celular, direto após a compra.</p></div>",
+      "css": ".ds-step{padding:clamp(22px,2.6vw,32px) clamp(18px,2.4vw,32px);border-top:1px solid rgba(19,17,16,.14);border-left:1px solid rgba(19,17,16,.14)}.ds-step-n{font-family:Bodoni Moda,Didot,serif;font-size:clamp(2rem,3.2vw,2.8rem);line-height:.9;color:#7c2b2b;display:block;margin-bottom:.4rem}.ds-step h3{font-family:Bodoni Moda,Didot,serif;font-weight:500;font-size:clamp(1.1rem,1.6vw,1.3rem);margin:0 0 .3em}.ds-step p{margin:0;color:#544d46;font-size:.95rem}"
+    },
+    {
+      "name": "Product Mockup / Device",
+      "kind": "custom",
+      "refersTo": "device",
+      "description": "Phone-frame that plays the grayscaled ritual video. The rounded (40px/30px), Soft-Lifted exception; depicts real hardware.",
+      "html": "<div class=\"ds-device\"><div class=\"ds-device-notch\"></div><div class=\"ds-device-screen\"><div class=\"ds-device-cap\"><b>Ritual · 7 minutos</b><span>Abrir · Drenar · Gelar · Selar</span></div></div></div>",
+      "css": ".ds-device{position:relative;width:min(300px,78vw);aspect-ratio:9/19;background:#0a0908;border-radius:40px;padding:11px;box-shadow:0 24px 60px -28px rgba(19,17,16,.45)}.ds-device-screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:#2a2724}.ds-device-notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:34%;height:22px;background:#0a0908;border-radius:0 0 14px 14px;z-index:3}.ds-device-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px 14px 14px;background:linear-gradient(0deg,rgba(10,9,8,.92),rgba(10,9,8,0));color:#f4f0ea}.ds-device-cap b{font-family:Bodoni Moda,Didot,serif;font-weight:500;font-size:1.05rem;display:block}.ds-device-cap span{font-size:.8rem;color:#c0b8ae}"
+    },
+    {
+      "name": "Content Preview Card",
+      "kind": "card",
+      "refersTo": "preview-card",
+      "description": "Paper card with a 4/3 media well holding grayscaled video or a CSS-drawn document mock, over a Bodoni subhead and caption.",
+      "html": "<div class=\"ds-pv\"><div class=\"ds-pv-media\"><div class=\"ds-pv-doc\"><div class=\"ds-kh\"></div><div class=\"ds-kl\"></div><div class=\"ds-kl\"></div><div class=\"ds-kl short\"></div></div></div><div class=\"ds-pv-b\"><h3>Checklist da manhã</h3><p>Uma página para colar no espelho.</p></div></div>",
+      "css": ".ds-pv{background:#fbf9f5;border:1px solid rgba(19,17,16,.14)}.ds-pv-media{aspect-ratio:4/3;background:#efe9e0;display:flex;align-items:center;justify-content:center}.ds-pv-doc{width:64%;aspect-ratio:3/4;background:#fff;border:1px solid rgba(19,17,16,.26);display:flex;flex-direction:column;justify-content:flex-end;padding:14px}.ds-pv-doc .ds-kh{height:6px;background:#131110;width:70%;margin-bottom:6px}.ds-pv-doc .ds-kl{height:3px;background:rgba(19,17,16,.26);width:100%;margin-bottom:4px}.ds-pv-doc .ds-kl.short{width:55%}.ds-pv-b{padding:16px 18px 18px}.ds-pv-b h3{font-family:Bodoni Moda,Didot,serif;font-weight:500;font-size:1.1rem;margin:0 0 .2em}.ds-pv-b p{margin:0;font-size:.9rem;color:#544d46}"
+    },
+    {
+      "name": "Testimonial Card",
+      "kind": "card",
+      "refersTo": "testimonial",
+      "description": "Ink-2 card stacked star row -> Bodoni quote -> attribution. Placeholder content; stars in Oxblood Warm.",
+      "html": "<div class=\"ds-tst\"><p class=\"ds-tst-stars\">★★★★★</p><p class=\"ds-tst-q\">“Usei antes do casamento da minha irmã. As fotos ficaram outra coisa.”</p><p class=\"ds-tst-by\"><span class=\"ds-av\"></span> Depoimento de exemplo</p></div>",
+      "css": ".ds-tst{background:#1c1917;border:1px solid rgba(244,240,234,.16);padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:1rem;color:#f4f0ea}.ds-tst-stars{margin:0;color:#9a3b34;letter-spacing:.15em;font-size:.8rem}.ds-tst-q{margin:0;font-family:Bodoni Moda,Didot,serif;font-size:1.12rem;line-height:1.4}.ds-tst-by{margin:0;display:flex;align-items:center;gap:.7em;font-size:.85rem;color:#c0b8ae}.ds-tst-by .ds-av{width:34px;height:34px;border-radius:50%;background:#2a2724;border:1px solid rgba(244,240,234,.28);flex:none}"
+    },
+    {
+      "name": "Featured Plan Card",
+      "kind": "card",
+      "refersTo": "plan-featured",
+      "description": "The Completo plan — ink-2 card with an oxblood border and flag marking it as the live/featured choice; oxblood-warm check list, block primary button.",
+      "html": "<div class=\"ds-plan ds-plan-feat\"><span class=\"ds-plan-flag\">Mais escolhido</span><span class=\"ds-plan-name\">Completo</span><p class=\"ds-plan-desc\">O método + os 4 bônus.</p><div class=\"ds-plan-price\"><span class=\"cur\">R$</span><span class=\"num\">37</span><span class=\"per\">à vista</span></div><ul class=\"ds-plan-list\"><li><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12.5 9 17.5 20 6.5\"/></svg><span>Tudo do Essencial</span></li><li><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12.5 9 17.5 20 6.5\"/></svg><span>Protocolo SOS Rosto</span></li></ul><a class=\"ds-plan-cta\" href=\"#\">Quero o Completo</a></div>",
+      "css": ".ds-plan{display:flex;flex-direction:column;background:#1c1917;border:1px solid rgba(244,240,234,.16);padding:clamp(24px,3vw,38px);color:#f4f0ea}.ds-plan-feat{border-color:#7c2b2b}.ds-plan-flag{align-self:flex-start;font-family:Archivo,sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#f7efe9;background:#7c2b2b;padding:.4em .8em;margin-bottom:1.2rem}.ds-plan-name{font-family:Bodoni Moda,Didot,serif;font-weight:500;font-size:1.5rem;margin-bottom:.2rem}.ds-plan-desc{color:#c0b8ae;font-size:.92rem;margin:0 0 1.4rem}.ds-plan-price{display:flex;align-items:flex-end;gap:.4rem;margin-bottom:1.4rem;font-family:Bodoni Moda,Didot,serif}.ds-plan-price .cur{font-size:1rem;color:#c0b8ae;margin-bottom:.55rem}.ds-plan-price .num{font-size:clamp(2.6rem,5vw,3.6rem);line-height:.9;font-weight:500}.ds-plan-price .per{font-family:Archivo,sans-serif;color:#c0b8ae;font-size:.82rem;margin-bottom:.55rem}.ds-plan-list{list-style:none;padding:0;margin:0 0 1.6rem;display:grid;gap:.7rem;flex:1}.ds-plan-list li{display:grid;grid-template-columns:auto 1fr;gap:.7em;align-items:start;font-size:.94rem}.ds-plan-list li svg{width:1.15em;height:1.15em;margin-top:.15em;color:#9a3b34}.ds-plan-cta{margin-top:auto;display:flex;justify-content:center;padding:1.2em 2.2em;font-family:Archivo,sans-serif;font-weight:600;font-size:1rem;background:#7c2b2b;color:#f7efe9;border:1px solid #7c2b2b;border-radius:0;transition:background .4s cubic-bezier(.22,1,.36,1)}.ds-plan-cta:hover{background:#9a3b34;border-color:#9a3b34}"
+    },
+    {
+      "name": "Upgrade Modal",
+      "kind": "custom",
+      "refersTo": "modal",
+      "description": "Fixed centered dialog with a device-black scrim; oxblood-bordered ink-2 box with a pop entrance (disabled under reduced-motion), stacked actions and a low-emphasis decline.",
+      "html": "<div class=\"ds-modal\"><div class=\"ds-modal-box\"><button class=\"ds-modal-close\" aria-label=\"Fechar\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg></button><h3>Espere, leve o Completo por <span class=\"big\">+R$10</span>.</h3><p>Por menos de um cafezinho, você adiciona os 4 bônus.</p><div class=\"ds-modal-actions\"><a class=\"ds-modal-cta\" href=\"#\">Sim, quero o Completo (R$37)</a><button class=\"ds-modal-decline\" type=\"button\">Não, seguir só com o método (R$27)</button></div></div></div>",
+      "css": ".ds-modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(10,9,8,.74);backdrop-filter:blur(6px)}.ds-modal-box{position:relative;background:#1c1917;border:1px solid #7c2b2b;max-width:470px;width:100%;padding:clamp(28px,4vw,44px);color:#f4f0ea;animation:ds-pop .4s cubic-bezier(.22,1,.36,1)}@keyframes ds-pop{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}.ds-modal-box h3{font-family:Bodoni Moda,Didot,serif;font-weight:500;font-size:clamp(1.5rem,3vw,2rem);margin:0 0 .6rem}.ds-modal-box .big{color:#9a3b34}.ds-modal-box p{color:#c0b8ae;margin:0 0 1.2rem}.ds-modal-actions{display:grid;gap:10px;margin-top:1.4rem}.ds-modal-cta{display:flex;justify-content:center;padding:1.2em 2.2em;font-family:Archivo,sans-serif;font-weight:600;font-size:1rem;background:#7c2b2b;color:#f7efe9;border:1px solid #7c2b2b;border-radius:0}.ds-modal-cta:hover{background:#9a3b34;border-color:#9a3b34}.ds-modal-decline{background:none;border:none;color:#9a9289;font-size:.85rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:.4em}.ds-modal-decline:hover{color:#c0b8ae}.ds-modal-close{position:absolute;top:12px;right:12px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:none;border:none;color:#c0b8ae;cursor:pointer}.ds-modal-close svg{width:1.15em;height:1.15em}.ds-modal-close:hover{color:#f4f0ea}@media(prefers-reduced-motion:reduce){.ds-modal-box{animation:none}}"
+    },
+    {
       "name": "Before/After Comparator",
       "kind": "custom",
       "refersTo": "compare",
-      "description": "Signature interaction. Drag handle over grayscaled media; the oxblood knob is the only circle and the only shadow in the system.",
+      "description": "Signature interaction. Drag handle over grayscaled media; the oxblood knob is a rounded exception carrying the shared Soft Lift.",
       "html": "<div class=\"ds-compare\" style=\"--pos:50%\"><div class=\"ds-cmp-handle\"></div><div class=\"ds-cmp-knob\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 7 5 12l4 5M15 7l4 5-4 5M6 12h12\"/></svg></div></div>",
       "css": ".ds-compare{position:relative;width:100%;aspect-ratio:3/4;max-width:520px;margin-inline:auto;overflow:hidden;background:#2a2724;user-select:none}.ds-cmp-handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#9a3b34;transform:translateX(-1px)}.ds-cmp-knob{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#7c2b2b;color:#f7efe9;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 60px -28px rgba(19,17,16,.45)}.ds-cmp-knob svg{width:22px;height:22px}"
     },
@@ -91,41 +148,44 @@
       "kind": "custom",
       "refersTo": "faq",
       "description": "Native details/summary, hairline-ruled, Bodoni question, oxblood plus/minus glyph whose vertical stroke collapses on open.",
-      "html": "<details class=\"ds-faq\" open><summary class=\"ds-faq-q\"><h3>Funciona no meu tipo de rosto?</h3><span class=\"ds-pm\"></span></summary><div class=\"ds-faq-a\"><p>Sim — o protocolo trata retenção temporária, comum a quase todos os rostos.</p></div></details>",
+      "html": "<details class=\"ds-faq\" open><summary class=\"ds-faq-q\"><h3>Funciona no meu rosto?</h3><span class=\"ds-pm\"></span></summary><div class=\"ds-faq-a\"><p>Se o seu rosto muda de um dia para o outro, você está no padrão de retenção temporária.</p></div></details>",
       "css": ".ds-faq{border-bottom:1px solid rgba(19,17,16,.14)}.ds-faq>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(18px,2.4vw,26px) 0}.ds-faq>summary::-webkit-details-marker{display:none}.ds-faq-q h3{font-family:Bodoni Moda,Didot,serif;font-size:clamp(1.1rem,1.7vw,1.35rem);font-weight:500;margin:0}.ds-pm{position:relative;width:20px;height:20px;flex:none}.ds-pm::before,.ds-pm::after{content:\"\";position:absolute;background:#7c2b2b;transition:transform .35s cubic-bezier(.22,1,.36,1)}.ds-pm::before{top:9px;left:0;width:20px;height:1.5px}.ds-pm::after{left:9px;top:0;width:1.5px;height:20px}.ds-faq[open] .ds-pm::after{transform:scaleY(0)}.ds-faq-a{color:#544d46;max-width:64ch;padding-bottom:clamp(18px,2.4vw,26px)}.ds-faq-a p{margin:0}"
     }
   ],
   "narrative": {
     "northStar": "The Aesthetics House Cover Story",
-    "overview": "Rosto Leve reads like an editorial house's cover feature, not a niche depuffing landing page. It refuses the category default — soft light background, emoji, identical cards, a shouting guarantee seal — and replaces it with cinematic proof and editorial typography. The whole surface is warm monochrome: espresso-near-black grounds carry full-bleed grayscaled media, ivory grounds carry the reading, and photogravure grays sit between. A single restrained oxblood is the only chromatic voice, and it is spent only on the 'live element.' The world is recognizable with the content stripped out: the alternation of dark-cinema and ivory-editorial grounds, 1px hairlines as the only divider, high-contrast Didot display (Bodoni Moda) set against clean grotesque body (Archivo), and uppercase tracked micro-labels used as photo folios and captions. Tone follows the brand voice: mature, elegant, confident, unhurried. A deliberate night to day to night tonal progression runs down the scroll. Density is generous; motion is quiet — content rests visible and reveals gently on scroll, degrading to fully visible without JS and honoring reduced-motion.",
+    "overview": "Rosto Leve reads like an editorial house's cover feature, not a niche depuffing landing page. It refuses the category default — soft light background, emoji, identical cards, a shouting guarantee seal — and replaces it with cinematic proof and editorial typography. The whole surface is warm monochrome: espresso-near-black grounds carry full-bleed grayscaled media, ivory grounds carry the reading, and photogravure grays sit between. A single restrained oxblood is the only chromatic voice, and it is spent only on the 'live element.' The world is recognizable with the content stripped out: the alternation of dark-cinema and ivory-editorial grounds, 1px hairlines as the only divider, high-contrast Didot display (Bodoni Moda) set against clean grotesque body (Archivo), and uppercase tracked micro-labels used as photo folios and captions. The sales page is a direct-response scroll built on the same world — hero, product/mockup, how-it-works steps, mechanism, before/after proof, content preview, testimonials, bonuses, two-plan pricing, FAQ, close, plus a mobile sticky CTA and an upgrade modal — every device inheriting square surfaces, hairlines, grayscaled media, and oxblood as the single live/featured signal. Tone follows the brand voice: mature, elegant, confident, unhurried. A deliberate night to day to night tonal progression runs down the scroll. Density is generous; motion is quiet — content rests visible and reveals gently on scroll, degrading to fully visible without JS and honoring reduced-motion.",
     "keyCharacteristics": [
       "Warm monochrome: espresso grounds + ivory grounds + photogravure grays.",
-      "One accent (oxblood) reserved for the live element; never decorative.",
+      "One accent (oxblood) reserved for the live/featured element; never decorative.",
       "Bodoni Moda display against Archivo body; uppercase tracked folios.",
       "1px hairlines as the sole divider; flat surfaces, square corners.",
-      "Full-bleed grayscaled media; editorial spreads across the gutter."
+      "Full-bleed grayscaled media; editorial spreads across the gutter.",
+      "Square by default, with two deliberate rounded exceptions: the comparator knob and the phone-frame product mockup."
     ],
     "rules": [
-      { "name": "The Live Element Rule", "body": "Oxblood marks exactly one thing — the element that is alive under the reader's hand or eye (primary action, slider, active choice, live folio). If a surface has oxblood in two unrelated decorative places, one of them is wrong.", "section": "colors" },
-      { "name": "The Dark-Ground Fallback Rule", "body": "On espresso grounds, full oxblood (#7c2b2b) fails AA for small text, so small accents fall back to Oxblood Warm (#9a3b34) or neutral soft ink. Oxblood folios only render in oxblood on light grounds, where they pass.", "section": "colors" },
-      { "name": "The Folio, Not Eyebrow Rule", "body": "Uppercase tracked micro-labels are photo folios and captions (Fig. 01, Pergunta 01, Seu resultado) — never a kicker/eyebrow stacked above a headline as a decorative label. Caption descriptions drop to normal case for legibility.", "section": "typography" },
-      { "name": "The Serif Numeral Rule", "body": "Sequence numbers that are real sequence (phase 1–4, module 01–n, the price figure) are set in the Bodoni display at large size; they are the system's ornament instead of any invented badge.", "section": "typography" },
-      { "name": "The Flat-Ground Rule", "body": "Surfaces are flat. Separation is a 1px hairline or a tonal shift, never a drop shadow. The single Soft Lift exists to make the draggable knob feel liftable; do not extend it to cards, buttons, or sections.", "section": "elevation" }
+      { "name": "The Live Element Rule", "body": "Oxblood marks exactly one class of thing per surface — the element that is alive under the reader's hand or eye, or the one option the page wants chosen: primary action, slider handle/knob, active quiz choice, live folio, the featured plan (its oxblood border and flag), and the upgrade modal (its oxblood border, since it is the live decision on screen). If a surface has oxblood in two unrelated decorative places, one of them is wrong.", "section": "colors" },
+      { "name": "The Dark-Ground Fallback Rule", "body": "On espresso grounds, full oxblood (#7c2b2b) fails AA for small text, so small accents fall back to Oxblood Warm (#9a3b34) or neutral soft ink (step numerals on dark, plan-list check icons, testimonial stars). Oxblood folios only render in oxblood on light grounds, where they pass.", "section": "colors" },
+      { "name": "The Folio, Not Eyebrow Rule", "body": "Uppercase tracked micro-labels are photo folios and captions (Fig. 01, Pergunta 01, Prévia, Bônus 01) — never a kicker/eyebrow stacked above a headline as a decorative label. The plan flag ('Mais escolhido') is a badge attached to its plan card, not an eyebrow over a title. Caption descriptions drop to normal case for legibility.", "section": "typography" },
+      { "name": "The Serif Numeral Rule", "body": "Sequence numbers that are real sequence (phase 1–4, step 1–3, module 01–n, the price figure, the plan price) are set in the Bodoni display at large size; they are the system's ornament instead of any invented badge.", "section": "typography" },
+      { "name": "The Flat-Ground Rule", "body": "Surfaces are flat. Separation is a 1px hairline or a tonal shift, never a drop shadow. The single Soft Lift belongs only to physical objects (the draggable knob, the phone mockup); do not extend it to cards, plans, buttons, or sections.", "section": "elevation" }
     ],
     "dos": [
-      "Do spend oxblood only on the live element (primary action, slider handle/knob, active choice, live folio), keeping it rare.",
-      "Do alternate espresso and ivory grounds to carry the night to day to night scroll progression.",
+      "Do spend oxblood only on the live/featured element (primary action, slider handle/knob, active choice, live folio, featured plan, upgrade modal), keeping it rare.",
+      "Do alternate espresso and ivory grounds to carry the night to day to night scroll progression, including across the direct-response bands.",
       "Do divide with 1px hairlines and tonal shifts; keep surfaces flat and corners square (border-radius: 0).",
-      "Do set every headline and real sequence numeral in Bodoni Moda display, and all reading/UI in Archivo.",
-      "Do use uppercase tracked micro-labels as photo folios/captions, and grayscale all photographic and video media.",
-      "Do let content rest visible and reveal gently on scroll; honor prefers-reduced-motion and keep AA contrast (fall back to Oxblood Warm / soft ink for small accents on dark)."
+      "Do set every headline and real sequence numeral (phase, step, module, price, plan price) in Bodoni Moda display, and all reading/UI in Archivo.",
+      "Do use uppercase tracked micro-labels as photo folios/captions and card badges, and grayscale all photographic and video media (including the device and preview videos).",
+      "Do treat the phone mockup and comparator knob as the only rounded, Soft-Lifted objects, because they depict physical things.",
+      "Do let content rest visible and reveal gently on scroll; honor prefers-reduced-motion (including the modal pop) and keep AA contrast (fall back to Oxblood Warm / soft ink for small accents on dark)."
     ],
     "donts": [
-      "Don't stack an uppercase micro-label as a kicker/eyebrow above a headline — folios are captions, not eyebrows.",
-      "Don't add drop shadows to cards, buttons, or sections; the single Soft Lift belongs to the comparator knob alone.",
-      "Don't introduce a second accent hue or use oxblood decoratively — one voice only.",
-      "Don't use gradients as decorative surface fills; gradients are permitted only as functional media scrims for legibility and the single scroll-cue hairline fade.",
-      "Don't round corners (except the comparator knob) or reach for generic same-size card grids."
+      "Don't stack an uppercase micro-label as a kicker/eyebrow above a headline — folios are captions and card badges, not eyebrows.",
+      "Don't add drop shadows to cards, plans, buttons, or sections; the single Soft Lift belongs to the knob and the phone mockup alone.",
+      "Don't introduce a second accent hue or use oxblood decoratively — one voice, spent on the live/featured element only.",
+      "Don't use gradients as decorative surface fills; gradients are permitted only as functional media scrims for legibility, the device caption cap, and the single scroll-cue hairline fade.",
+      "Don't round corners except the comparator knob and the device frame/notch/screen — no rounded buttons, cards, plans, or modal.",
+      "Don't ship the placeholder testimonials, example before/after, or illustrative bonus values as if real — they carry .synthetic notes and must be replaced before running ads."
     ]
   }
 }

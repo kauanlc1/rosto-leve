@@ -367,14 +367,6 @@ details.faq__i > summary::-webkit-details-marker{display:none}
    ESTRUTURA DE RESPOSTA DIRETA (vendas remodelada)
    ========================================================================== */
 
-/* Selo de lançamento — contido, sem countdown falso */
-.launch-tag{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:600;
-  font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);
-  border:1px solid var(--line-dark-2);padding:.5em .9em}
-.launch-tag .dotmark{width:7px;height:7px;border-radius:50%;background:var(--accent-warm)}
-.on-light .launch-tag,.on-paper .launch-tag{color:var(--on-light);border-color:var(--line-light-2)}
-.on-light .launch-tag .dotmark,.on-paper .launch-tag .dotmark{background:var(--accent)}
-
 /* Mockup do produto — moldura de celular com o vídeo do ritual */
 .mockup{display:flex;justify-content:center}
 .device{position:relative;width:min(300px,78vw);aspect-ratio:9/19;background:#0a0908;
