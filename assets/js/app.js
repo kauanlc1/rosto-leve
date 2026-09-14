@@ -117,8 +117,37 @@
     show(0);
   }
 
+  /* ---- Modal de upgrade (plano Essencial -> Completo) ---- */
+  function initUpgradeModal() {
+    var modal = document.querySelector('[data-modal="upgrade"]');
+    if (!modal) return;
+    var lastFocus = null;
+    function open() {
+      lastFocus = document.activeElement;
+      modal.classList.add("on");
+      document.body.style.overflow = "hidden";
+      var f = modal.querySelector("a, button");
+      if (f) { try { f.focus(); } catch (e) {} }
+    }
+    function close() {
+      modal.classList.remove("on");
+      document.body.style.overflow = "";
+      if (lastFocus) { try { lastFocus.focus(); } catch (e) {} }
+    }
+    document.querySelectorAll('[data-plan="essencial"]').forEach(function (b) {
+      b.addEventListener("click", function (e) { e.preventDefault(); open(); });
+    });
+    modal.querySelectorAll("[data-modal-close]").forEach(function (b) {
+      b.addEventListener("click", close);
+    });
+    modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("on")) close();
+    });
+  }
+
   function boot() {
-    initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz();
+    initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz(); initUpgradeModal();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
