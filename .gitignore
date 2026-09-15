@@ -11,3 +11,7 @@ desktop.ini
 # Editores
 .vscode/
 .idea/
+
+# Mídia de produção do entregável (local/OneDrive, fora do repo do site)
+assets/video/entregavel/
+assets/audio/

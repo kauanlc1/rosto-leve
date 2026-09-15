@@ -107,3 +107,49 @@ clipe boas-vindas (450) + narração Joana (42) + narração Scheila (42) = **~5
 1. Escolher a **voz** (Joana ou Scheila).
 2. Aprovar seguir pra **produção completa** (as 4 fases) nesse modelo voz-off — OU pedir a montagem
    final do piloto da Abertura no CapCut primeiro.
+
+---
+
+## PRODUÇÃO COMPLETA — FEITA ✅ (voz: Scheila Martins)
+
+Guia = @morena madura. Tudo baixado no projeto:
+- **Vídeos** (`assets/video/entregavel/`): `1-abertura-boasvindas`, `2-abrir`, `3-drenar`, `4-gelar`,
+  `5-selar`, `6-fechamento` (clipes 5s, 1080p, 9:16) + `guia-sequencia-completa.mp4` (as 6 em sequência).
+- **Narrações** (`assets/audio/entregavel/`): `narr-0-abertura` … `narr-5-fechamento` (Scheila, PT-BR).
+- **B-roll P&B** (`assets/video/hero-1..6.mp4`): closes reais de drenagem.
+
+### Sobre a duração (importante)
+Não precisamos de 7 min de FOOTAGE. O vídeo **ensina** cada fase (mostra o movimento 1x) → dá ~**3–4 min**.
+Os "7 minutos" são o ritual que a espectadora **executa**, guiada pela narração + **timer na tela**.
+Isso é melhor de consumir e realista com o material que temos.
+
+### Receita de montagem (CapCut) — timeline 9:16
+Para cada bloco: [clipe da guia] + [b-roll quando houver] + [narração] + [rótulo de fase + timer] + trilha baixa.
+
+| Bloco | Vídeo | Narração | B-roll | Tela |
+|---|---|---|---|---|
+| Abertura | 1-abertura + 2-abrir | narr-0-abertura | — | Cartela "MÉTODO ROSTO LEVE · 4 fases" |
+| Fase 1 Abrir | 2-abrir | narr-1-abrir | hero-3, hero-4 | Timer 1:00 · "FASE 1 · ABRIR" |
+| Fase 2 Drenar | 3-drenar | narr-2-drenar | hero-1,2,5,6 | Timer 3:00 · "FASE 2 · DRENAR" |
+| Fase 3 Gelar | 4-gelar | narr-3-gelar | (sem b-roll; loop/slow o clipe) | Timer 2:00 · "FASE 3 · GELAR" |
+| Fase 4 Selar | 5-selar | narr-4-selar | — | Timer 1:00 · "FASE 4 · SELAR" |
+| Fechamento | 6-fechamento | narr-5-fechamento | — | Cartela "Rosto Leve." |
+
+Dicas: clipes de 5s podem ir a 0.5x (10s) e/ou loop pra preencher; timer na tela sustenta o tempo do ritual;
+trilha instrumental suave e bem baixa; legendas grandes da narração ajudam retenção.
+
+### Scripts de narração (para conferência)
+- **Abertura:** "Se o seu rosto muda de um dia pro outro, esse ritual de sete minutos é pra você…"
+- **Abrir:** "Vamos começar abrindo as saídas. Com as pontas dos dedos, bem de leve…"
+- **Drenar:** "Agora a drenagem. Do centro do rosto em direção às saídas…"
+- **Gelar:** "Chegou o frio. Ele contrai os vasos e ajuda a devolver o líquido…"
+- **Selar:** "Para fechar, sele. Aplique o seu hidratante com toques suaves…"
+- **Fechamento:** "Pronto. Esse é o Rosto Leve. Faça amanhã de manhã e observe o seu rosto…"
+
+### Ledger de créditos (atualizado)
+Sessão anterior ~5.626 + produção de hoje [4 stills 300 + 5 narrações 230 + 4 clipes 1.800 = 2.330]
+= **~7.956 gastos. Restante ≈ 12.044.**
+
+### Opcionais (se quiser, eu gero)
+- B-roll extra de **frio** (gelo/roller) pra fase Gelar. · Cartelas de título/rótulos como imagem.
+- Versão **16:9** pra YouTube. · Trilha (audio_music_generate).
