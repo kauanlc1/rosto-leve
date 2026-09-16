@@ -453,7 +453,7 @@ details.faq__i > summary::-webkit-details-marker{display:none}
 .modal__box p{color:var(--on-dark-soft);margin-bottom:1.2rem}
 .modal__box .big{font-family:var(--serif);color:var(--accent-warm);font-size:1.1rem}
 .modal__actions{display:grid;gap:10px;margin-top:1.4rem}
-.modal__decline{background:none;border:none;color:var(--on-dark-faint);font-size:.85rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:.4em}
+.modal__decline{display:block;text-align:center;background:none;border:none;color:var(--on-dark-faint);font-size:.85rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:.4em}
 .modal__decline:hover{color:var(--on-dark-soft)}
 .modal__close{position:absolute;top:12px;right:12px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--on-dark-soft)}
 .modal__close:hover{color:var(--on-dark)}
