@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>SOS Rosto — Rosto Leve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&display=swap">
+<style>
+  :root{--espresso:#131110;--ivory:#f4f0ea;--paper:#fbf9f5;--oxblood:#7c2b2b;--warm:#9a3b34;--ink:#2b2622;--soft:#6a625a;--faint:#9a9088;--line:#d9d1c5;--serif:"Bodoni Moda",Georgia,serif;--sans:"Archivo",-apple-system,sans-serif;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{size:A4;margin:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;min-height:297mm;background:var(--paper);padding:22mm 20mm 18mm;position:relative;display:flex;flex-direction:column;page-break-after:always;overflow:hidden}
+  .page:last-child{page-break-after:auto}
+  .brand{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:26px}
+  .wordmark{font-family:var(--serif);font-size:15px;letter-spacing:.02em;color:var(--espresso)}
+  .wordmark .dot{color:var(--oxblood)}
+  .kicker{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--faint)}
+  .eyebrow{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--oxblood);margin-bottom:14px;font-weight:600}
+  h1{font-family:var(--serif);font-weight:500;font-size:52px;line-height:1.02;color:var(--espresso);letter-spacing:-.01em;margin-bottom:16px}
+  .lede{font-size:12.5px;line-height:1.65;color:var(--soft);max-width:150mm}
+  .lede strong{color:var(--ink);font-weight:600}
+  .rule{height:1px;background:var(--line);margin:26px 0}
+  .sec{margin-bottom:22px}
+  .sec__head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+  .sec__num{font-family:var(--serif);font-size:13px;color:var(--oxblood);width:22px;flex:none}
+  .sec__title{font-family:var(--serif);font-size:19px;color:var(--espresso);font-weight:500}
+  .sec__hint{font-size:10px;color:var(--faint);margin-left:auto;letter-spacing:.02em}
+  .item{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid #eae3d8;align-items:flex-start}
+  .item:last-child{border-bottom:none}
+  .box{width:15px;height:15px;border:1.4px solid var(--oxblood);border-radius:2px;flex:none;margin-top:1px}
+  .step{width:22px;height:22px;border:1.4px solid var(--oxblood);border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:var(--oxblood);margin-top:0}
+  .item__body{flex:1}
+  .item__t{font-size:12px;font-weight:600;color:var(--ink);line-height:1.4}
+  .item__d{font-size:10.5px;color:var(--soft);line-height:1.5;margin-top:2px}
+  .item__t .tag{font-family:var(--serif);font-style:italic;color:var(--oxblood);font-weight:400;margin-left:6px;font-size:11px}
+  .cols{display:flex;gap:18px}
+  .col{flex:1;border:1px solid var(--line);border-radius:2px;padding:16px 16px 10px}
+  .col h4{font-family:var(--serif);font-size:14px;color:var(--espresso);margin-bottom:10px;font-weight:500}
+  .col.good h4{color:var(--warm)}
+  .col ul{list-style:none}
+  .col li{font-size:10.5px;color:var(--soft);line-height:1.5;padding:5px 0;border-bottom:1px solid #eae3d8;display:flex;gap:8px}
+  .col li:last-child{border-bottom:none}
+  .col li::before{content:"—";color:var(--oxblood)}
+  .foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+  .aviso{font-size:8.5px;line-height:1.6;color:var(--faint)}
+  .aviso b{color:var(--soft)}
+  .sign{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+  .sign .wm{font-family:var(--serif);font-size:12px;color:var(--espresso)}
+  .sign .wm .dot{color:var(--oxblood)}
+  .sign .pg{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+  .close{background:var(--espresso);color:var(--ivory);padding:26px 24px;border-radius:2px;margin-bottom:22px}
+  .close h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:8px}
+  .close p{font-size:11px;line-height:1.6;color:#c9c0b5}
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="brand"><span class="wordmark">Rosto Leve<span class="dot">.</span></span><span class="kicker">Protocolo de emergência</span></div>
+  <div class="eyebrow">Para um dia importante</div>
+  <h1>SOS<br>Rosto</h1>
+  <p class="lede">Acordou <strong>muito inchada</strong> e tem um compromisso que importa? Este é o plano intensivo de um dia. Ele não faz mágica — mas concentra tudo o que ajuda a reduzir a <strong>aparência</strong> do inchaço temporário nas horas certas. Siga na ordem.</p>
+  <div class="rule"></div>
+
+  <div class="sec">
+    <div class="sec__head"><span class="sec__num">01</span><span class="sec__title">As primeiras 2 horas</span><span class="sec__hint">a janela que mais rende</span></div>
+    <div class="item"><div class="step">1</div><div class="item__body"><div class="item__t">Levante e fique na vertical</div><div class="item__d">Nada de voltar pra cama. Ficar em pé já ativa a drenagem natural que a noite deitada desacelerou.</div></div></div>
+    <div class="item"><div class="step">2</div><div class="item__body"><div class="item__t">Água em temperatura ambiente</div><div class="item__d">1 a 2 copos. Parece contraintuitivo, mas hidratar ajuda o corpo a soltar o líquido retido.</div></div></div>
+    <div class="item"><div class="step">3</div><div class="item__body"><div class="item__t">Ritual completo, caprichado <span class="tag">Abrir · Drenar · Gelar · Selar</span></div><div class="item__d">Faça as 4 fases com calma, dando atenção extra à drenagem e ao frio. É o coração do SOS.</div></div></div>
+    <div class="item"><div class="step">4</div><div class="item__body"><div class="item__t">Frio reforçado</div><div class="item__d">Compressa gelada ou roller do freezer, 5 a 10 segundos por região, repetindo 2 a 3 rodadas ao longo da manhã.</div></div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec__head"><span class="sec__num">02</span><span class="sec__title">No dia — comer &amp; evitar</span></div>
+    <div class="cols">
+      <div class="col good"><h4>Prioriza</h4><ul><li>Água ao longo do dia</li><li>Alimentos leves e naturais</li><li>Frutas com água (melancia, pepino)</li><li>Chás sem açúcar</li></ul></div>
+      <div class="col"><h4>Segura hoje</h4><ul><li>Sal e ultraprocessados</li><li>Embutidos e enlatados</li><li>Álcool</li><li>Excesso de doces</li></ul></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p class="aviso"><b>Aviso.</b> Conteúdo estético e educativo sobre a aparência de inchaço facial temporário. Não substitui avaliação, diagnóstico ou tratamento médico e não promete resultados permanentes ou de emagrecimento. Resultados variam de pessoa para pessoa.</p>
+    <div class="sign"><span class="wm">Rosto Leve<span class="dot">.</span></span><span class="pg">01 · 02</span></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="brand"><span class="wordmark">Rosto Leve<span class="dot">.</span></span><span class="kicker">Protocolo de emergência</span></div>
+
+  <div class="sec">
+    <div class="sec__head"><span class="sec__num">03</span><span class="sec__title">Ao longo do dia</span></div>
+    <div class="item"><div class="box"></div><div class="item__body"><div class="item__t">Repita o frio antes de sair</div><div class="item__d">Uma última passada de gelo 20 minutos antes do compromisso dá aquele efeito de rosto mais definido.</div></div></div>
+    <div class="item"><div class="box"></div><div class="item__body"><div class="item__t">Postura e respiração</div><div class="item__d">Ombros para trás, queixo levemente elevado. Boa postura também "desincha" a leitura do rosto.</div></div></div>
+    <div class="item"><div class="box"></div><div class="item__body"><div class="item__t">Maquiagem a favor (se usar)</div><div class="item__d">Luz nas partes altas do rosto e contorno suave ajudam a realçar a definição que o ritual trouxe.</div></div></div>
+  </div>
+
+  <div class="close">
+    <h3>Respira. Você tem um plano.</h3>
+    <p>Inchaço matinal é temporário e reversível. Feito na ordem — vertical, água, ritual, frio — o SOS te devolve um rosto mais leve para a hora que importa.</p>
+  </div>
+
+  <div class="sec">
+    <div class="sec__head"><span class="sec__num">04</span><span class="sec__title">Atenção</span></div>
+    <p class="lede" style="font-size:11px">Se o inchaço surgiu de repente, é forte, doloroso, assimétrico ou vem com falta de ar, vermelhidão ou febre, isto não é um caso de estética — procure atendimento médico. O SOS é para o inchaço leve e temporário do dia a dia.</p>
+  </div>
+
+  <div class="foot">
+    <p class="aviso"><b>Aviso.</b> Conteúdo estético e educativo sobre a aparência de inchaço facial temporário. Não substitui avaliação, diagnóstico ou tratamento médico e não promete resultados permanentes ou de emagrecimento. Resultados variam de pessoa para pessoa.</p>
+    <div class="sign"><span class="wm">Rosto Leve<span class="dot">.</span></span><span class="pg">02 · 02</span></div>
+  </div>
+</section>
+
+</body>
+</html>

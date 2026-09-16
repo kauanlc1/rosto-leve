@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Checklist Manhã Desincha — Rosto Leve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&display=swap">
+<style>
+  :root{
+    --espresso:#131110; --ivory:#f4f0ea; --paper:#fbf9f5;
+    --oxblood:#7c2b2b; --warm:#9a3b34;
+    --ink:#2b2622; --soft:#6a625a; --faint:#9a9088;
+    --line:#d9d1c5;
+    --serif:"Bodoni Moda",Georgia,serif;
+    --sans:"Archivo",-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{ size:A4; margin:0; }
+  html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{
+    width:210mm;min-height:297mm;background:var(--paper);
+    padding:22mm 20mm 18mm;position:relative;
+    display:flex;flex-direction:column;
+    page-break-after:always;overflow:hidden;
+  }
+  .page:last-child{page-break-after:auto}
+
+  /* Cabeçalho de marca */
+  .brand{display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:26px}
+  .wordmark{font-family:var(--serif);font-size:15px;letter-spacing:.02em;color:var(--espresso)}
+  .wordmark .dot{color:var(--oxblood)}
+  .kicker{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--faint)}
+
+  /* Título */
+  .eyebrow{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--oxblood);
+    margin-bottom:14px;font-weight:600}
+  h1{font-family:var(--serif);font-weight:500;font-size:52px;line-height:1.02;
+    color:var(--espresso);letter-spacing:-.01em;margin-bottom:16px}
+  .lede{font-size:12.5px;line-height:1.65;color:var(--soft);max-width:150mm}
+  .lede strong{color:var(--ink);font-weight:600}
+
+  .rule{height:1px;background:var(--line);margin:26px 0}
+
+  /* Seção */
+  .sec{margin-bottom:22px}
+  .sec__head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+  .sec__num{font-family:var(--serif);font-size:13px;color:var(--oxblood);width:22px;flex:none}
+  .sec__title{font-family:var(--serif);font-size:19px;color:var(--espresso);font-weight:500}
+  .sec__hint{font-size:10px;color:var(--faint);margin-left:auto;letter-spacing:.02em}
+
+  /* Itens de checklist */
+  .item{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid #eae3d8;align-items:flex-start}
+  .item:last-child{border-bottom:none}
+  .box{width:15px;height:15px;border:1.4px solid var(--oxblood);border-radius:2px;flex:none;margin-top:1px}
+  .item__body{flex:1}
+  .item__t{font-size:12px;font-weight:600;color:var(--ink);line-height:1.4}
+  .item__d{font-size:10.5px;color:var(--soft);line-height:1.5;margin-top:2px}
+  .item__t .tag{font-family:var(--serif);font-style:italic;color:var(--oxblood);font-weight:400;margin-left:6px;font-size:11px}
+
+  /* Rodapé */
+  .foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+  .aviso{font-size:8.5px;line-height:1.6;color:var(--faint)}
+  .aviso b{color:var(--soft)}
+  .sign{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+  .sign .wm{font-family:var(--serif);font-size:12px;color:var(--espresso)}
+  .sign .wm .dot{color:var(--oxblood)}
+  .sign .pg{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+
+  /* Bloco de fecho da pág 2 */
+  .close{background:var(--espresso);color:var(--ivory);padding:26px 24px;border-radius:2px;margin-bottom:22px}
+  .close h3{font-family:var(--serif);font-weight:500;font-size:22px;margin-bottom:8px}
+  .close p{font-size:11px;line-height:1.6;color:#c9c0b5}
+</style>
+</head>
+<body>
+
+<!-- ===== PÁGINA 1 ===== -->
+<section class="page">
+  <div class="brand">
+    <span class="wordmark">Rosto Leve<span class="dot">.</span></span>
+    <span class="kicker">Ritual de 7 minutos</span>
+  </div>
+
+  <div class="eyebrow">Checklist diário</div>
+  <h1>Manhã<br>Desincha</h1>
+  <p class="lede">Imprima ou salve no celular e siga todos os dias. São <strong>7 minutos</strong> em quatro fases, na ordem certa — mais alguns hábitos simples que ajudam a reduzir a <strong>aparência</strong> do inchaço facial temporário. Marque cada passo conforme faz.</p>
+
+  <div class="rule"></div>
+
+  <div class="sec">
+    <div class="sec__head">
+      <span class="sec__num">01</span>
+      <span class="sec__title">O ritual, na ordem</span>
+      <span class="sec__hint">~7 min</span>
+    </div>
+
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Abrir <span class="tag">as saídas · 1 min</span></div>
+        <div class="item__d">Com as pontas dos dedos, deslize do pescoço em direção à clavícula, bem de leve. Prepara o caminho por onde o líquido vai sair.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Drenar <span class="tag">do centro para fora · 3 min</span></div>
+        <div class="item__d">Do centro do rosto em direção às saídas: bochechas, mandíbula e área dos olhos. Pressão suave, como acariciar a pele de um bebê.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Gelar <span class="tag">contrair · 2 min</span></div>
+        <div class="item__d">Roller gelado ou compressa fria pelo rosto, 5 a 10 segundos por região. Sem exagero — o frio ajuda a devolver o líquido.</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Selar <span class="tag">finalizar · 1 min</span></div>
+        <div class="item__d">Aplique seu hidratante com toques suaves de baixo para cima. Fecha o ritual e deixa a pele confortável.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec__head">
+      <span class="sec__num">02</span>
+      <span class="sec__title">Hábitos da manhã</span>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Um copo de água ao acordar</div>
+        <div class="item__d">Hidratar logo cedo ajuda o corpo a regular a retenção ao longo do dia.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Rosto elevado nos primeiros minutos</div>
+        <div class="item__d">Evite voltar a deitar. Ficar na vertical ajuda a drenagem natural a trabalhar.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Luz natural e respiração</div>
+        <div class="item__d">Alguns minutos de luz e respiração calma ativam o corpo para o dia.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p class="aviso"><b>Aviso.</b> Conteúdo estético e educativo sobre a aparência de inchaço facial temporário. Não substitui avaliação, diagnóstico ou tratamento médico e não promete resultados permanentes ou de emagrecimento. Resultados variam de pessoa para pessoa.</p>
+    <div class="sign">
+      <span class="wm">Rosto Leve<span class="dot">.</span></span>
+      <span class="pg">01 · 02</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PÁGINA 2 ===== -->
+<section class="page">
+  <div class="brand">
+    <span class="wordmark">Rosto Leve<span class="dot">.</span></span>
+    <span class="kicker">Ritual de 7 minutos</span>
+  </div>
+
+  <div class="sec">
+    <div class="sec__head">
+      <span class="sec__num">03</span>
+      <span class="sec__title">Na véspera (à noite)</span>
+      <span class="sec__hint">prepara a manhã</span>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Segurar no sódio no jantar</div>
+        <div class="item__d">Comidas muito salgadas à noite tendem a aparecer no rosto pela manhã. Prefira o leve.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Álcool com moderação</div>
+        <div class="item__d">O álcool favorece a retenção. Se for beber, intercale com água.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Dormir com a cabeça levemente elevada</div>
+        <div class="item__d">Um travesseiro um pouco mais alto ajuda o líquido a não se acumular no rosto durante a noite.</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="item__body">
+        <div class="item__t">Sono de qualidade</div>
+        <div class="item__d">Noites mal dormidas pioram a aparência de inchaço. Priorize o descanso.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="close">
+    <h3>Faça amanhã e observe seu rosto.</h3>
+    <p>A retenção é um dos raros “problemas de beleza” cujo resultado é real, imediato e reversível. Sete minutos de manhã, todos os dias — esse é o Rosto Leve.</p>
+  </div>
+
+  <div class="sec">
+    <div class="sec__head">
+      <span class="sec__num">04</span>
+      <span class="sec__title">Quando procurar um profissional</span>
+    </div>
+    <p class="lede" style="font-size:11px">Inchaço no rosto que aparece de repente, não melhora, vem com dor, vermelhidão, febre ou outros sintomas não é assunto de estética — procure um médico. Este material cuida da aparência do inchaço leve e temporário do dia a dia.</p>
+  </div>
+
+  <div class="foot">
+    <p class="aviso"><b>Aviso.</b> Conteúdo estético e educativo sobre a aparência de inchaço facial temporário. Não substitui avaliação, diagnóstico ou tratamento médico e não promete resultados permanentes ou de emagrecimento. Resultados variam de pessoa para pessoa.</p>
+    <div class="sign">
+      <span class="wm">Rosto Leve<span class="dot">.</span></span>
+      <span class="pg">02 · 02</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
