@@ -87,10 +87,15 @@
     var questions = total - 1;
     var idx = 0;
     var answers = {};
+    var leadFired = false;
 
     function show(n) {
       idx = Math.max(0, Math.min(total - 1, n));
       steps.forEach(function (s, i) { s.hidden = i !== idx; });
+      if (idx >= questions && !leadFired) {
+        leadFired = true;
+        if (typeof fbq === "function") fbq("track", "Lead", { content_name: "Quiz Rosto Leve" });
+      }
       var pct = idx / questions;
       if (bar) bar.style.transform = "scaleX(" + pct + ")";
       if (counter) counter.textContent = idx < questions ? (idx + 1) + " / " + questions : "";
@@ -146,8 +151,18 @@
     });
   }
 
+  /* ---- Pixel: InitiateCheckout ao clicar em qualquer link de checkout da Cakto ---- */
+  function initCheckoutTracking() {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest('a[href*="pay.cakto.com.br"]');
+      if (a && typeof fbq === "function") {
+        fbq("track", "InitiateCheckout", { content_name: a.getAttribute("href") });
+      }
+    });
+  }
+
   function boot() {
-    initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz(); initUpgradeModal();
+    initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz(); initUpgradeModal(); initCheckoutTracking();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
