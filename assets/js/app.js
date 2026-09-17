@@ -161,8 +161,19 @@
     });
   }
 
+  /* ---- Reforço de autoplay dos vídeos (seguro; iOS em Baixo Consumo ainda pode bloquear) ---- */
+  function initVideoAutoplay() {
+    document.querySelectorAll("video[autoplay]").forEach(function (v) {
+      try {
+        v.muted = true; v.setAttribute("muted", ""); v.playsInline = true;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      } catch (e) {}
+    });
+  }
+
   function boot() {
-    initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz(); initUpgradeModal(); initCheckoutTracking();
+    initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz(); initUpgradeModal(); initCheckoutTracking(); initVideoAutoplay();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
