@@ -195,7 +195,6 @@ html{scrollbar-color:var(--graphite) var(--ink);scrollbar-width:thin}
 /* Telas baixas (notebook): reduz o headline e o espaçamento pra não sobrepor o logo */
 @media(min-width:768px) and (max-height:820px){
   .hero .d-hero{font-size:clamp(2.4rem,5.2vw,3.9rem)}
-  .hero__inner{padding-bottom:clamp(30px,5vh,52px)}
 }
 
 /* ==========================================================================
