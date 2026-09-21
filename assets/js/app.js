@@ -172,8 +172,29 @@
     });
   }
 
+  /* ---- Encaminha UTMs/parametros de rastreio pro checkout da Cakto (UTMify le via Cakto) ---- */
+  function initUtmForwarding() {
+    try {
+      var KEEP = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","utm_id","src","sck","fbclid","gclid","ttclid"];
+      var store = {};
+      try { store = JSON.parse(sessionStorage.getItem("rl_track") || "{}"); } catch (e) {}
+      var qs = new URLSearchParams(location.search);
+      KEEP.forEach(function (k) { var v = qs.get(k); if (v) store[k] = v; });
+      try { sessionStorage.setItem("rl_track", JSON.stringify(store)); } catch (e) {}
+      var keys = Object.keys(store);
+      if (!keys.length) return;
+      document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach(function (a) {
+        try {
+          var u = new URL(a.href);
+          keys.forEach(function (k) { if (!u.searchParams.has(k)) u.searchParams.set(k, store[k]); });
+          a.href = u.toString();
+        } catch (e) {}
+      });
+    } catch (e) {}
+  }
+
   function boot() {
-    initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz(); initUpgradeModal(); initCheckoutTracking(); initVideoAutoplay();
+    initUtmForwarding(); initReveal(); initCompare(); initFaq(); initSticky(); initYear(); initQuiz(); initUpgradeModal(); initCheckoutTracking(); initVideoAutoplay();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
